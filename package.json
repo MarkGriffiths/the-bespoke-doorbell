@@ -1,5 +1,5 @@
 {
-  "name": "@thebespokepixel/doorbell-notify",
+  "name": "@thebespokepixel/doorbell",
   "version": "0.0.1",
   "description": "The Bespoke Pixel's Studio Doorbell",
   "main": "index.js",
