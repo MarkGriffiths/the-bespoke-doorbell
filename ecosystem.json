@@ -25,7 +25,7 @@
       ref  : 'origin/master',
       repo : 'https://github.com/MarkGriffiths/the-bespoke-doorbell.git',
       path : '/Users/pm2/Applications',
-      'post-deploy' : 'npm install ; pm2 startOrRestart --env production'
+      'post-deploy' : 'npm install ; pm2 startOrRestart ecosystem.json --env production'
     }
   }
 }
