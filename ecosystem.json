@@ -1,0 +1,31 @@
+{
+  /**
+   * Application configuration section
+   * http://pm2.keymetrics.io/docs/usage/application-declaration/
+   */
+  apps: [
+    // First application
+    {
+      name: `${process.env.NAME || process.env.Box_Name}: Doorbell`,
+      script: './index.js',
+      env_production: {
+        NODE_ENV: 'production'
+      }
+    }
+  ],
+
+  /**
+   * Deployment section
+   * http://pm2.keymetrics.io/docs/usage/deployment/
+   */
+  deploy: {
+    production : {
+      user : 'pm2',
+      host : ['white', 'purple'],
+      ref  : 'origin/master',
+      repo : 'https://github.com/MarkGriffiths/the-bespoke-doorbell.git',
+      path : '/Users/pm2/Applications',
+      'post-deploy' : 'npm install ; pm2 startOrRestart ecosystem.json --env production'
+    }
+  }
+}
