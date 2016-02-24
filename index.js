@@ -2,6 +2,7 @@
 'use strict'
 
 let Pushover = false
+let stathat = false
 
 require('shelljs/global')
 const dgram = require('dgram')
@@ -16,6 +17,10 @@ const messageLocalAudio = path.join(__dirname, 'media', 'Doorbell.caf')
 
 const Notifier = require('node-notifier')
 const nc = new Notifier.NotificationCenter()
+
+if (process.env.stathat_user) {
+	stathat = require('stathat')
+}
 
 if (process.env.pushover_user && process.env.pushover_token) {
 	Pushover = require('pushover-notifications')
@@ -73,6 +78,9 @@ server.on('message', (msg, rinfo) => {
 		ncMsg.wait = false
 		ncMsg.icon = messageIcon
 		nc.notify(ncMsg)
+		if (stathat) {
+			stathat.trackEZCount(process.env.stathat_user, 'doorbell', 1, (status, json) => {})
+		}
 		exec(`afplay -v 1 ${messageLocalAudio} 2>/dev/null &`)
 	}
 })

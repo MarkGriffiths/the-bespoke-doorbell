@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "The Bespoke Pixel's Studio Doorbell",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkGriffiths/the-bespoke-doorbell.git"
+  },
   "config": {
     "broadcast": "255.255.255.255",
     "port": 8989
@@ -11,7 +15,8 @@
     "dateformat": "^1.0.12",
     "node-notifier": "^4.5.0",
     "pushover-notifications": "^0.2.2",
-    "shelljs": "^0.6.0"
+    "shelljs": "^0.6.0",
+    "stathat": "0.0.8"
   },
   "devDependencies": {
     "xo": "^0.12.1"
