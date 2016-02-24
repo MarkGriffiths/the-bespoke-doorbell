@@ -25,6 +25,10 @@
   "license": "MIT",
   "xo": {
     "semicolon": false,
-    "esnext": true
+    "esnext": true,
+    "rules": {
+      "camelcase": 0,
+      "no-unused-vars": 0
+    }
   }
 }
