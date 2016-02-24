@@ -29,7 +29,7 @@ server.on('error', err => {
 server.on('message', (msg, rinfo) => {
 	console.log(`${msg} to ${signature} (${msg.length} bytes) from ${rinfo.address}:${rinfo.port}`)
 
-	if ((rinfo.port === 8888 && msg.includes(farSignature)) || (rinfo.address === process.env.ip_self && msg.includes(farSignature))) {
+	if ((rinfo.port === 8888 && msg.includes(farSignature)) || (rinfo.address === server.address().address && msg.includes(farSignature))) {
 		const timestamp = Date.now()
 		const msg = {
 			title: 'Doorbell',
