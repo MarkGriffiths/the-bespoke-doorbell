@@ -19,7 +19,7 @@
     "stathat": "0.0.8"
   },
   "devDependencies": {
-    "xo": "^0.12.1"
+    "xo": "^0.13.0"
   },
   "scripts": {
     "test": "xo",
