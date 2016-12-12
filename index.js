@@ -43,6 +43,8 @@ server.on('message', (msg, rinfo) => {
 		}
 		if (Pushover) {
 			msg.priority = 1
+			msg.url = 'https://white.thebespokepixel.net/Cameras/porch.html'
+			msg.url_title = 'Camera'
 			new Pushover({
 				user: process.env.pushover_user,
 				token: process.env.pushover_token
@@ -77,6 +79,7 @@ server.on('message', (msg, rinfo) => {
 		const ncMsg = msg
 		ncMsg.wait = false
 		ncMsg.icon = messageIcon
+		ncMsg.open = 'https://white.thebespokepixel.net/Cameras/porch.html'
 		nc.notify(ncMsg)
 		if (stathat) {
 			stathat.trackEZCount(process.env.stathat_user, 'doorbell', 1, (status, json) => {})
