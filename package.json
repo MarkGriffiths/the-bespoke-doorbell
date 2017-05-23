@@ -12,14 +12,14 @@
     "port": 8989
   },
   "dependencies": {
-    "dateformat": "^1.0.12",
-    "node-notifier": "^4.5.0",
+    "dateformat": "^2.0.0",
+    "node-notifier": "^5.1.2",
     "pushover-notifications": "^0.2.2",
-    "shelljs": "^0.6.0",
+    "shelljs": "^0.7.7",
     "stathat": "0.0.8"
   },
   "devDependencies": {
-    "xo": "^0.13.0"
+    "xo": "^0.18.2"
   },
   "scripts": {
     "test": "xo",
